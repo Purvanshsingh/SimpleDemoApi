@@ -4,7 +4,7 @@ from hydrus.app_factory import app_factory
 from hydrus.utils import set_session, set_doc, set_hydrus_server_url, set_api_name
 from hydra_python_core import doc_maker
 from hydrus.data.db_models import Base
-from creating_api_doc.api_doc_output import doc
+from creating_api_doc.MovieApi_doc import doc
 
 # Server URL
 HYDRUS_SERVER_URL = "http://localhost:8080/"
