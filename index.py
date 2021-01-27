@@ -6,28 +6,23 @@ from hydra_python_core import doc_maker
 from hydrus.data.db_models import Base
 from creating_api_doc.api_doc_output import doc
 
-# Define the server URL, this is what will be displayed on the Doc
+# Server URL
 HYDRUS_SERVER_URL = "http://localhost:8080/"
 
-# The name of the API or the EntryPoint, the api will be at http://localhost/<API_NAME>
-API_NAME = "movie_api"
+# Name of the API
+API_NAME = "MovieApi"
 
-
-# Define the Hydra API Documentation
-# NOTE: You can use your own API Documentation and create a HydraDoc object using doc_maker
-#       Or you may create your own HydraDoc Documentation using doc_writer [see hydrus/hydraspec/doc_writer_sample]
+# Defining the Hydra API Documentation
 apidoc = doc_maker.create_doc(doc, HYDRUS_SERVER_URL, API_NAME)
-# Define the database connection
+# Connecting to Database
 engine = create_engine('sqlite:///database.db')
-# Add the required Models to the database
+# Adding required Models to the database
 Base.metadata.create_all(engine)
-# Start a session with the DB and create all classes needed by the APIDoc
 session = sessionmaker(bind=engine)()
 
-# Create a hydrus app with the API name you want, default will be "api"
+# Creating hydrus app"
 app = app_factory(API_NAME)
 
-# Set the name of the API
 with set_api_name(app, API_NAME):
     # Set the API Documentation
     with set_doc(app, apidoc):

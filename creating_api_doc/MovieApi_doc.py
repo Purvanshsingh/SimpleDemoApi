@@ -1,4 +1,4 @@
-"""Generated API Documentation sample using doc_writer_sample.py."""
+"""Generated MovieApi Documentation sample using api_doc.py"""
     
 doc = {
     "@context": {

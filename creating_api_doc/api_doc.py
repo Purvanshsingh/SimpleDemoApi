@@ -116,8 +116,7 @@ api_doc.add_supported_class(movie_class_)
 collection_title = "Movie collection"
 collection_name = "MovieCollection"
 collection_description = "This collection comprises of all the objects of type Movie"
-# A manages block is a way to declare additional, implicit statements about members of a collection.
-# Here we are defining that all the members of this collection is of type class_.
+
 collection_managed_by = {
     "property": "rdf:type",
     "object": movie_class_.id_,
@@ -139,12 +138,12 @@ if __name__ == "__main__":
     """Print the complete sample Doc in api_doc_output.py."""
     import json
     dump = json.dumps(doc, indent=4, sort_keys=True)
-    doc = '''"""Generated API Documentation sample using doc_writer_sample.py."""
+    doc = '''"""Generated MovieApi Documentation sample using api_doc.py"""
     \ndoc = {}\n'''.format(dump)
     # Python does not recognise null, true and false in JSON format, convert
     # them to string
     doc = doc.replace('true', '"true"')
     doc = doc.replace('false', '"false"')
     doc = doc.replace('null', '"null"')
-    with open("api_doc_output.py", "w") as f:
+    with open("MovieApi_doc.py", "w") as f:
         f.write(doc)
