@@ -20,7 +20,7 @@ API_NAME = "MovieApi"
 
 
 apidoc = doc_maker.create_doc(doc, HYDRUS_SERVER_URL, API_NAME)
-engine = create_engine('postgresql:///database.db')
+engine = create_engine('postgres://mmcsdtdaalvitt:caa15701bd57f476189b603613d7402d3c763530383f556c0d4744b186f0eaab@ec2-34-225-167-77.compute-1.amazonaws.com:5432/d4568vnmaj0f75')
 Base.metadata.create_all(engine)
 session = sessionmaker(bind=engine)()
 
