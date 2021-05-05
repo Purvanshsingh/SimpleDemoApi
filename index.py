@@ -14,7 +14,7 @@ from hydrus.socketio_factory import create_socket
 
 logger = logging.getLogger(__file__)
 # Defining server URL
-HYDRUS_SERVER_URL = "https://hydra-movie-api.herokuapp.com/"
+HYDRUS_SERVER_URL = "http://localhost:8080/"
 # Defining API Name
 API_NAME = "MovieApi"
 
