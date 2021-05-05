@@ -14,7 +14,7 @@ from hydrus.socketio_factory import create_socket
 
 logger = logging.getLogger(__file__)
 # Defining server URL
-HYDRUS_SERVER_URL = "http://localhost:8000/"
+HYDRUS_SERVER_URL = ""
 # Defining API Name
 API_NAME = "MovieApi"
 
@@ -46,11 +46,11 @@ with set_authentication(app, AUTH), set_token(app, TOKEN), \
         if __name__ == "__main__":
             # this is run only if development server is run
             # Set the name of the API
-            socketio.run(app=app, debug=True, port=8000)
+            socketio.run(app=app, debug=True, port=8080)
         else:
             # Start the Hydrus app
-            http_server = WSGIServer(('', 8000), app)
-            logger.info(f'Running server at port 8000')
+            http_server = WSGIServer(('', 8080), app)
+            logger.info(f'Running server at port 8080')
             try:
                 http_server.serve_forever()
             except KeyboardInterrupt:
