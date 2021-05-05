@@ -1,5 +1,5 @@
-"""Generated MovieApi Documentation sample using api_doc.py"""
-    
+"""Generated API Documentation sample using doc_writer_sample.py."""
+
 doc = {
     "@context": {
         "ApiDocumentation": "hydra:ApiDocumentation",
@@ -158,7 +158,7 @@ doc = {
             "supportedProperty": [
                 {
                     "@type": "SupportedProperty",
-                    "property": "http://localhost:8080/props_movie_name",
+                    "property": "http://schema.org/name",
                     "readable": "true",
                     "required": "true",
                     "title": "movie_name",
@@ -166,10 +166,10 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "http://localhost:8080/props_movie_director",
+                    "property": "http://schema.org/director",
                     "readable": "true",
                     "required": "true",
-                    "title": "movie_name",
+                    "title": "movie_director",
                     "writeable": "true"
                 }
             ],
@@ -310,6 +310,115 @@ doc = {
                 }
             ],
             "supportedProperty": [
+                {
+                    "hydra:description": "The Movie Class",
+                    "hydra:title": "movie",
+                    "property": {
+                        "@id": "http://localhost:8080/movie_api/vocab#EntryPoint/Movie",
+                        "@type": "hydra:Link",
+                        "description": "The class of the Movie",
+                        "domain": "http://localhost:8080/movie_api/vocab#EntryPoint",
+                        "label": "Movie",
+                        "range": "http://localhost:8080/movie_api/vocab#Movie",
+                        "supportedOperation": [
+                            {
+                                "@id": "updatemovie",
+                                "@type": "http://schema.org/UpdateAction",
+                                "description": "null",
+                                "expects": "http://localhost:8080/movie_api/vocab#Movie",
+                                "expectsHeader": [],
+                                "label": "UpdateMovie",
+                                "method": "POST",
+                                "possibleStatus": [
+                                    {
+                                        "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+                                        "@type": "Status",
+                                        "description": "Movie class updated.",
+                                        "statusCode": 200,
+                                        "title": ""
+                                    }
+                                ],
+                                "returns": "null",
+                                "returnsHeader": [
+                                    "Content-Type",
+                                    "Content-Length"
+                                ]
+                            },
+                            {
+                                "@id": "addmovie",
+                                "@type": "http://schema.org/AddAction",
+                                "description": "null",
+                                "expects": "http://localhost:8080/movie_api/vocab#Movie",
+                                "expectsHeader": [],
+                                "label": "AddMovie",
+                                "method": "PUT",
+                                "possibleStatus": [
+                                    {
+                                        "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+                                        "@type": "Status",
+                                        "description": "Movie class Added.",
+                                        "statusCode": 200,
+                                        "title": ""
+                                    }
+                                ],
+                                "returns": "null",
+                                "returnsHeader": [
+                                    "Content-Type",
+                                    "Content-Length"
+                                ]
+                            },
+                            {
+                                "@id": "getmovie",
+                                "@type": "http://schema.org/FindAction",
+                                "description": "null",
+                                "expects": "null",
+                                "expectsHeader": [],
+                                "label": "GetMovie",
+                                "method": "GET",
+                                "possibleStatus": [
+                                    {
+                                        "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+                                        "@type": "Status",
+                                        "description": "Movie class returned.",
+                                        "statusCode": 200,
+                                        "title": ""
+                                    }
+                                ],
+                                "returns": "http://localhost:8080/movie_api/vocab#Movie",
+                                "returnsHeader": [
+                                    "Content-Type",
+                                    "Content-Length"
+                                ]
+                            },
+                            {
+                                "@id": "deletemovie",
+                                "@type": "http://schema.org/DeleteAction",
+                                "description": "null",
+                                "expects": "http://localhost:8080/movie_api/vocab#Movie",
+                                "expectsHeader": [],
+                                "label": "DeleteMovie",
+                                "method": "DELETE",
+                                "possibleStatus": [
+                                    {
+                                        "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+                                        "@type": "Status",
+                                        "description": "Movie class deleted.",
+                                        "statusCode": 200,
+                                        "title": ""
+                                    }
+                                ],
+                                "returns": "null",
+                                "returnsHeader": [
+                                    "Content-Type",
+                                    "Content-Length"
+                                ]
+                            }
+                        ]
+                    },
+                    "readable": "true",
+                    "required": "null",
+                    "writeable": "false"
+                },
                 {
                     "hydra:description": "The MovieCollection collection",
                     "hydra:title": "moviecollection",
