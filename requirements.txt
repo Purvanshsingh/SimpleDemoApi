@@ -25,7 +25,7 @@ greenlet==0.4.17
 gunicorn==20.1.0
 httplib2==0.18.1
 hydra-openapi-parser @ git+https://github.com/HTTP-APIs/hydra-openapi-parser@e80f75fdaa214f065bd25d97f2236b61d59dc573
-hydra-python-agent==0.0.1
+hydra-python-agent
 -e git+https://github.com/http-apis/hydra-python-core@3795cb0bd8eeb0f310febf17090ca3bdb1b1d135#egg=hydra_python_core
 hydrus==0.3.1
 idna==2.10
